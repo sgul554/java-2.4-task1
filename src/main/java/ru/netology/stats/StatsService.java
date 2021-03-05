@@ -6,16 +6,15 @@ public class StatsService {
         for (long purchase : purchases) {
             sum = sum + purchase;
         }
-
         return sum;
     }
 
     public long calcAverageSum(long[] purchases) {
-        long sum = 0;
-        for (long purchase : purchases) {
-            sum = sum + purchase;
-        }
-        long averageSum = sum / 12;
+
+        StatsService service = new StatsService();
+        long sum = service.calculateSum(purchases);
+
+        long averageSum = sum / purchases.length;
 
         return averageSum;
     }
@@ -57,36 +56,30 @@ public class StatsService {
     }
 
     public long calcMonthAverageSumMin(long[] purchases) {
-        long sum = 0;
-        long monthCount = 0;
-        for (long purchase : purchases) {
-            sum = sum + purchase;
-        }
-        long averageSum = sum / 12;
 
+        StatsService service = new StatsService();
+        long averageSum = service.calcAverageSum(purchases);
+
+        long monthCount = 0;
         for (long purchase : purchases) {
             if (purchase > averageSum) {
                 monthCount++;
             }
         }
-
         return monthCount;
     }
 
     public long calcMonthAverageSumMax(long[] purchases) {
-        long sum = 0;
-        long monthCount = 0;
-        for (long purchase : purchases) {
-            sum = sum + purchase;
-        }
-        long averageSum = sum / 12;
 
+        StatsService service = new StatsService();
+        long averageSum = service.calcAverageSum(purchases);
+
+        long monthCount = 0;
         for (long purchase : purchases) {
             if (purchase < averageSum) {
                 monthCount++;
             }
         }
-
         return monthCount;
     }
 }
