@@ -9,60 +9,42 @@ class StatsServiceTest {
     @Test
     void shouldCalculateSum() {
         StatsService service = new StatsService();
-        long [] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 180;
-        long actual = service.calculateSum(purchases);
-
-        assertEquals(expected,actual);
+        long[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        assertEquals(180, service.calculateSum(purchases));
     }
 
     @Test
     void shouldCalcAverageSum() {
         StatsService service = new StatsService();
-        long [] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 15;
-        long actual = service.calcAverageSum(purchases);
-
-        assertEquals(expected,actual);
+        long[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        assertEquals(15, service.calcAverageSum(purchases));
     }
 
     @Test
     void shouldCalcMaxMonth() {
         StatsService service = new StatsService();
-        long [] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 8;
-        long actual = service.calcMaxMonth(purchases);
-
-        assertEquals(expected,actual);
+        long[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        assertEquals(8, service.calcMaxMonth(purchases));
     }
 
     @Test
     void shouldCalcMinMonth() {
         StatsService service = new StatsService();
-        long [] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 9;
-        long actual = service.calcMinMonth(purchases);
-
-        assertEquals(expected,actual);
+        long[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        assertEquals(9, service.calcMinMonth(purchases));
     }
 
     @Test
     void shouldCalcMonthAverageSumMin() {
         StatsService service = new StatsService();
-        long [] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 5;
-        long actual = service.calcMonthAverageSumMin(purchases);
-
-        assertEquals(expected,actual);
+        long[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        assertEquals(5, service.calcMonthAverageSumMin(purchases));
     }
 
     @Test
     void shouldCalcMonthAverageSumMax() {
         StatsService service = new StatsService();
-        long [] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 5;
-        long actual = service.calcMonthAverageSumMax(purchases);
-
-        assertEquals(expected,actual);
+        long[] purchases = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        assertEquals(5, service.calcMonthAverageSumMax(purchases));
     }
 }
